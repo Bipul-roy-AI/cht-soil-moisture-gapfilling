@@ -1,0 +1,23 @@
+# Jupyter
+.ipynb_checkpoints/
+*.pyc
+__pycache__/
+
+# Virtual environments
+.env
+.venv
+
+# Large data files — too big for GitHub
+data/cht_temporal_with_smap.csv
+data/cht_temporal_samples_v2.csv
+
+# GEE credentials
+.config/
+credentials
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual documents
+.virtual_documents/
