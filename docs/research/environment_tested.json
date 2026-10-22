@@ -1,0 +1,25 @@
+{
+  "python": "3.12.14",
+  "verification_device": "CPU",
+  "direct_package_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "earthengine-api": "1.7.49",
+    "xgboost-cpu": "3.4.1",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "6.31.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8"
+  },
+  "tests_passed": 19,
+  "new_notebooks_schema_checked": 7,
+  "python_notebook_cells_parsed": 36,
+  "offline_notebook_00_executed": true,
+  "gee_graph_serialized_with_mock_api": true,
+  "authenticated_gee_export_verified": false,
+  "gpu_verified": false,
+  "real_study_results_generated": false
+}

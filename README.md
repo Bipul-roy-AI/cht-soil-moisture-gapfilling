@@ -1,146 +1,67 @@
-# Soil Moisture Gap-Filling — Chittagong Hill Tracts, Bangladesh
-### A feasibility study using SMAP L3 + Sentinel-1 SAR + XGBoost
+# CHT Soil Moisture Reconstruction — revised research notebooks
 
-![Final Result](results/final_result.png)
+Research question: **When does terrain-normalized Sentinel-1 add predictive skill to climate-based reconstruction of SMAP over the Chittagong Hill Tracts?**
 
-## Overview
-NASA's SMAP satellite provides the best available global soil moisture
-data — but over Bangladesh's Chittagong Hill Tracts (CHT), **50.7% of
-daily observations are missing**. Zhang et al. (2025, J. Hydrology)
-demonstrate that Random Forest gap-filling of SMAP outperforms original
-satellite data globally — but their validation excludes dense tropical
-evergreen forests like CHT, where C-band SAR attenuation and monsoon RFI
-create the most challenging gap-filling conditions.
+**Status:** seven revised notebooks and reusable helpers are provided for a new study. The offline software path is checked using explicitly fictional data. Authenticated Earth Engine exports, real v2 training and independent field validation are pending. No improved Bangladesh accuracy is claimed.
 
-This project tests that methodology in CHT and quantifies why it is
-physically difficult — and what future L-band missions like NISAR
-could improve.
+## Start in Colab
 
-## Key Findings
+Open [**01: inventory and pilot export**](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/01_gee_inventory_and_pilot_export.ipynb). Authorize your own Earth Engine account, review the printed inventory, choose a relative orbit, then launch the small pilot. The project ID defaults to the non-secret ID in the original notebook; change it if needed. Do not share credentials.
 
-### 1. Gap structure is systematic, not seasonal
-- 152 of 300 days (50.7%) had no valid SMAP observation over CHT
-- Gap rate is consistent year-round (~47-54% per month)
-- Dry season (March): 54% gaps — same as monsoon peak (August): 52%
-- Conclusion: gaps are driven by structural RFI contamination from
-  South Asia's dense telecommunications infrastructure, not just
-  monsoon cloud cover
+Run [**00: fictional offline software check**](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/00_offline_software_check.ipynb) first if you want to verify the local training/evaluation path without satellite exports.
 
-### 2. Climate dominates over radar in tropical evergreen forest
-- Day-of-year (40%) and 7-day precipitation lag (31%) drive 71% of
-  model predictions
-- All Sentinel-1 SAR bands combined contribute only ~15%
-- SHAP analysis confirms radar signal carries almost no independent
-  soil moisture information after controlling for seasonality
-- Conclusion: C-band SAR (~5.4 GHz) is largely attenuated by CHT's
-  dense tropical canopy before reaching the soil surface — consistent
-  with known C-band vs L-band penetration physics in high-biomass
-  forests (Al-Yaari et al., 2014; Zhao et al., 2025)
+| Notebook | What it does | Colab |
+|---|---|---|
+| [00 offline check](notebooks/00_offline_software_check.ipynb) | Fictional fixtures only; train/calibrate/freeze/evaluate/gap-test | [Open](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/00_offline_software_check.ipynb) |
+| [01 inventory/pilot](notebooks/01_gee_inventory_and_pilot_export.ipynb) | Verify SMAP dates/grid, district names and SAR orbit; seven-day pilot | [Open](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/01_gee_inventory_and_pilot_export.ipynb) |
+| [02 full export](notebooks/02_gee_multiyear_export.ipynb) | Small batches of monthly real-data tasks, saved task ledger | [Open](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/02_gee_multiyear_export.ipynb) |
+| [03 data audit](notebooks/03_data_audit_and_freeze.ipynb) | QA, missingness/support audit, complete-calendar check, protocol | [Open](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/03_data_audit_and_freeze.ipynb) |
+| [04 training](notebooks/04_colab_training.ipynb) | Baselines, RF/XGBoost sensor ablations, separate calibration | [Open](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/04_colab_training.ipynb) |
+| [05 locked evaluation](notebooks/05_locked_evaluation_and_gap_tests.ipynb) | Final metrics, gap tests, subgroup/paired errors, support flags | [Open](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/05_locked_evaluation_and_gap_tests.ipynb) |
+| [06 optional spatial transfer](notebooks/06_optional_spatial_transfer.ipynb) | Predeclared geographic holdout with approximate exclusion buffer | [Open](https://colab.research.google.com/github/Bipul-roy-AI/cht-soil-moisture-gapfilling/blob/research-notebooks-v2/notebooks/06_optional_spatial_transfer.ipynb) |
 
-### 3. Model performance
-- RMSE: 0.0445 m3/m3 (below ESA CCI operational target of 0.05 m3/m3)
-- R2: 0.036 (temporal holdout — pre-monsoon train, monsoon test)
-- Low R2 reflects genuine physical limitation, not modeling failure:
-  the model captures seasonal dynamics but cannot track sub-weekly
-  rain pulses through dense canopy using C-band radar
+**Where to train:** Colab CPU is sufficient to start these tabular models. A compatible GPU XGBoost runtime is optional; Random Forest uses CPU. GEE performs satellite processing in the user's authorized account. Fine-scale terrain normalization can take substantial export time, so complete the pilot before launching multi-year tasks.
 
-## What This Means for Forest Ecohydrology
-This quantifies a critical data gap for Bangladesh's largest forest
-biome. Every other day, forest managers and climate researchers have
-no satellite soil moisture reading for CHT. The finding that radar
-cannot bridge this gap using C-band motivates:
-- Use of SMAP L4 (assimilation product) over L3 in forested regions
-- Future L-band SAR missions (NISAR, ALOS-4) for canopy-penetrating
-  soil moisture retrieval
-- Dense in-situ sensor networks (like those deployed in NC State's
-  Watershed Hydrology Lab) as ground truth anchors
+Read the [full run guide](docs/research/RUN_GUIDE.md) for Drive folder layout, task recovery, required user steps and limitations. Choose any optional spatial holdout before final-test inspection.
 
-## Study Area
-**Chittagong Hill Tracts, Bangladesh** (91.6E-92.6E, 21.5N-23.8N)
-Tropical evergreen/semi-evergreen hill forest — 670,000 ha,
-44% of Bangladesh's national forest land.
-**Study period:** March-December 2021
+## Main corrections
 
-## Data Sources
-| Dataset | Source | Resolution | Role |
-|---|---|---|---|
-| SMAP L3 soil moisture | NASA EarthData | 36 km, daily | Target variable |
-| Sentinel-1 SAR (VV, VH, VH/VV) | ESA Copernicus | 10-20 m | Radar predictors |
-| MODIS EVI | NASA | 500 m, 16-day | Vegetation state |
-| ERA5 precipitation + 7-day lag | ECMWF | 9 km, daily | Moisture forcing |
-| SRTM DEM + slope | USGS | 30 m | Terrain |
-| Topographic Wetness Index | HydroSHEDS | 15 arc-sec | Drainage patterns |
-| Day of year | derived | — | Seasonality |
+* Genuine target-grid **cell/date** labels; no regional mean copied to multiple pixels.
+* Verified single-version period: `/005`, 2017–2022, subject to live inventory confirmation. No silent `/005`/`/006` splice.
+* Train 2017–2019; validate 2020; calibrate intervals 2021; final test 2022.
+* Actual QA-screened MODIS EVI; 1 km product documented correctly.
+* Linear-power SAR aggregation, physically defined log ratio, pinned terrain normalization, common raw/RTC masks, recorded acquisition age/coverage.
+* Target-grid aggregation, district geometry, explicit missing/QA states, export configuration and source fingerprints.
+* Train-only imputation; validation-only model selection; no test early stopping.
+* All declared seeds, climate-only versus raw/RTC radar comparisons, artificial-gap temporal baselines, interval coverage/width and support flags.
+* Cells with insufficient training reference remain unfilled. Uncertainty and causal-interpretation limits are explicit.
 
-## Methods
-1. All data loaded and preprocessed in Google Earth Engine (Python API)
-2. Sentinel-1 filtered to 30-45 degree incidence angle to reduce
-   terrain distortion in CHT's steep topography (Navacchi et al., 2023)
-3. All predictors resampled to SMAP native 36km grid
-4. XGBoost trained on pixel-level samples from 148 valid SMAP dates
-5. Temporal holdout validation: train March-August, test September-December
-6. SHAP explainability analysis to diagnose feature contributions
-7. Gap-filled predictions aggregated to daily means for time series
+## What data you need
 
-## Results
-| Metric | Value |
-|---|---|
-| Gap rate | 50.7% (152/300 days) |
-| RMSE | 0.0445 m3/m3 |
-| R2 (temporal holdout) | 0.036 |
-| Top predictor | DOY (40%) |
-| SAR contribution | ~15% combined |
-| Validation approach | Temporal holdout (pre-monsoon train, monsoon test) |
+The notebooks obtain public SMAP, Sentinel-1, ERA5-Land, MODIS vegetation/land cover, terrain and district-boundary inputs. The old feature CSV and old daily regional series cannot replace the new cell/date export. A complete exported calendar is checked before full training.
 
-![Model Performance](results/model_performance_final.png)
+Independent BMD/university/field measurements are optional for beginning a **satellite-product reconstruction benchmark**, and important for stronger claims about actual forest-soil moisture. Record measurement depth, timing, units and calibration, and assess point-to-footprint representativeness. No CHT station inventory or field ground truth is bundled.
 
-![SHAP Analysis](results/shap_analysis.png)
+The defaults are retrospective: previous-timestamp predictors do not imply operational availability because reanalyses, annual maps and composites have production delays. Forest fraction is not canopy density. Availability/QA flags do not establish RFI causes. SMAP is the reconstruction reference, not independent field truth.
 
-## Limitations and Future Work
-- C-band SAR (Sentinel-1) saturates in high-biomass tropical forests;
-  L-band (NISAR, ALOS-4) would fundamentally improve radar penetration
-- Full Radiometric Terrain Correction (RTC) of Sentinel-1 not applied;
-  incidence angle filtering used as pragmatic quality control
-- No in-situ soil moisture stations exist in CHT for ground validation
-- Per-pixel spatial gap-filling (vs regional daily means) is next step
-- SoilGrids clay/sand texture and MODIS LAI are natural feature additions
+## Local installation and verification
 
-## References
-- Zhang et al. (2025). Global-scale gap filling of satellite soil moisture
-  products: Methods and validation. Journal of Hydrology, 652, 132762.
-- Al-Yaari et al. (2014). Global-scale evaluation of two satellite-based
-  passive microwave soil moisture datasets. Remote Sens. Environ., 149.
-- Navacchi et al. (2023). Utilising Sentinel-1's orbital stability for
-  efficient pre-processing of RTC gamma nought backscatter. Sensors, 23.
-- Zhao et al. (2025). Multifrequency subsurface soil moisture retrieval
-  for forest flows. IEEE JSTARS, 18.
-- Baghdadi et al. (2017). Calibration of the Water Cloud Model at C-Band.
-  Remote Sensing, 9(9), 969.
-
-## Repository Structure
-```
-cht-soil-moisture-gapfilling/
-├── Project_1.ipynb              # Full analysis notebook
-├── README.md                    # This file
-├── requirements.txt             # Python dependencies
-├── .gitignore                   # Excludes large files
-├── data/
-│   └── smap_daily_means.csv     # SMAP valid/gap labels (300 dates)
-└── results/
-    ├── final_result.png         # Main result — time series + gap analysis
-    ├── model_performance_final.png  # R2, RMSE, feature importance
-    └── shap_analysis.png        # SHAP explainability
-```
-
-## How to Run
 ```bash
-pip install -r requirements.txt
-jupyter notebook Project_1.ipynb
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[gee,notebooks,train]'
+python -m unittest discover -s tests -v
+python scripts/check_notebooks.py
 ```
-Authenticate Google Earth Engine with your Google account when prompted.
-A GEE project ID is required (free registration at earthengine.google.com).
 
----
-*Built as preparation for PhD research in Forest Ecohydrology and
-Machine Learning. Methodology follows Zhang et al. (2025) applied to
-a data-scarce tropical forest region.*
+The offline CPU verification used the `xgboost-cpu` distribution; Colab can retain its compatible existing XGBoost installation. See [methods](docs/research/METHODS_V2.md), the [run guide](docs/research/RUN_GUIDE.md), [software verification](docs/research/SOFTWARE_CHECKS.md), and [reviewed literature](docs/research/related_literature.csv).
+
+## Historical notebooks
+
+`Project_1.ipynb`, `cht_soil_moisture_gapfilling.ipynb`, `data/smap_daily_means.csv` and the old `results/` figures are retained as **v1 exploratory artifacts**. They do not establish v2 performance. The original README is preserved under [legacy_readme.md](docs/research/legacy_readme.md); its physical interpretations and reported metrics should not be treated as validated findings of the revised workflow. Start new work from `notebooks/`.
+
+## Attribution
+
+The vendored angular terrain-normalization routine is attributed to [gee_s1_ard](https://github.com/adugnag/gee_s1_ard), pinned commit `39207cb4998c9c80c27af3d8a62debe7ab41e7c7`. Its MIT licence and provenance are retained under `third_party/gee_s1_ard/` and with the package.
+
+Mullissa et al. (2021): https://doi.org/10.3390/rs13101954; Vollrath et al. (2020): https://doi.org/10.3390/rs12111867. The research design also draws on the verified gap-filling and structured-validation references listed in [METHODS_V2.md](docs/research/METHODS_V2.md). Publication readiness depends on the real data and validation; no acceptance or accuracy improvement is guaranteed.

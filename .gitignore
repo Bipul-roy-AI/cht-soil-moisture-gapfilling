@@ -21,3 +21,11 @@ Thumbs.db
 
 # Virtual documents
 .virtual_documents/
+
+# Revised study generated artifacts
+work_v2/
+runs_v2/
+*.egg-info/
+*.joblib
+*.parquet
+.data_v2/

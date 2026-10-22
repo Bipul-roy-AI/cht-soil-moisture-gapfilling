@@ -1,0 +1,23 @@
+{
+  "schema_version": "chtsm-v2",
+  "study_start": "2017-01-01",
+  "study_end_exclusive": "2023-01-01",
+  "smap_collection": "NASA/SMAP/SPL3SMP_E/005",
+  "mode": "retrospective_reconstruction_past_timestamp_predictors",
+  "districts": ["Bandarban", "Khagrachhari", "Rangamati"],
+  "orbit_pass": "DESCENDING",
+  "relative_orbit": null,
+  "sar_window_days": 12,
+  "evi_lookback_days": 64,
+  "rtc_model": "VOLUME",
+  "landcover_reference_year": 2019,
+  "terrain_buffer_m": 30,
+  "split_years": {"train": [2017, 2018, 2019], "val": [2020], "calibration": [2021], "test": [2022]},
+  "seeds": [42, 123, 2025],
+  "algorithms": ["random_forest", "xgboost"],
+  "alpha": 0.1,
+  "minimum_cell_training_targets": 15,
+  "training_row_cap": null,
+  "export_nodata": -9999,
+  "synthetic": false
+}
