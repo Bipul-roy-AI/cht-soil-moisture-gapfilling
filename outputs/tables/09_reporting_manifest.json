@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-10-23T22:47:01.623439+00:00",
+  "ml_status": "completed: QA-accepted held-out SMAP reconstruction; NO ground validation",
+  "ecohydrology_input_sha256": {
+    "04_available_years_monthly_panel.csv": "e90f327ba5eca34f5e9e76d2dce6a7c97224a9847cda2abc69b1661872023dbe",
+    "05_district_descriptive_summary.csv": "fedf8e83b5c951d6042231e86dd39897e6ba7301e7b7a9566a11ff3791472af9",
+    "06_district_evidence_summary.csv": "4f2593352d26370c7787dac249077e55e3494a7233577fdad238a751794a4cd5",
+    "06_threshold_sensitivity.csv": "0ed94647b76d8713e51b369baa0f6ce5a34f4bf3972d66e7d24437a084337d74",
+    "06_monthly_joint_support.csv": "5395534b917db03b6b1cda3c80ba5d28f4deb6dda27f72bccd8bbe9a6ef9d5c6"
+  },
+  "is_ground_validated": false,
+  "no_automatic_github_push": true
+}

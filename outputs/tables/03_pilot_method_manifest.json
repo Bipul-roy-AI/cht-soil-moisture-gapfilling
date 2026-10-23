@@ -1,0 +1,31 @@
+{
+  "pilot_year": 2020,
+  "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "cloud_project": "axial-paratext-491911-b6",
+  "forest_map_year": 2021,
+  "original_boundary": "data/boundaries/CHT_3_districts.shp",
+  "ee_products": {
+    "CHIRPS_v3_RNL": "UCSB-CHC/CHIRPS/V3/DAILY_RNL",
+    "MOD13Q1_v061": "MODIS/061/MOD13Q1",
+    "MOD16A2GF_v061": "MODIS/061/MOD16A2GF",
+    "MCD12Q1_v061": "MODIS/061/MCD12Q1"
+  },
+  "evi_summary_qa_equal": 0,
+  "min_evi_forest_coverage": 0.25,
+  "min_et_pixel_day_coverage": 0.9,
+  "temporal_note": "MOD13Q1 16-day start-date grouping; MOD16 GF ET calendar overlap weighting",
+  "limitations": "No independent ground validation. CHIRPS district-wide; EVI/ET MODIS 2021 forest-classified."
+}

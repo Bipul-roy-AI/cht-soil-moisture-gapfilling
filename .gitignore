@@ -1,23 +1,42 @@
-# Jupyter
-.ipynb_checkpoints/
-*.pyc
+# Research data/credentials stay on the local computer.
+.venv/
+venv/
 __pycache__/
-
-# Virtual environments
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .env
-.venv
+.env.*
+!.env.example
+*.key
+*.pem
+credentials*.json
+service-account*.json
 
-# Large data files — too big for GitHub
-data/cht_temporal_with_smap.csv
-data/cht_temporal_samples_v2.csv
+# Keep published figures, summaries and reproducibility manifests tracked,
+# but not raw or processed satellite files or models.
+data/boundaries/
+data/raw/
+data/interim/
+data/processed/
+data/external/
+outputs/models/
+outputs/tmp/
+logs/
 
-# GEE credentials
-.config/
-credentials
+# Original user-supplied shapefile components should never be published
+# without confirming license/provenance.
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.gpkg
 
-# OS files
-.DS_Store
+# Local operating-system / editor files.
 Thumbs.db
-
-# Virtual documents
-.virtual_documents/
+.DS_Store
+.idea/
+.vscode/

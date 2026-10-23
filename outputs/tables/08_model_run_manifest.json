@@ -1,0 +1,43 @@
+{
+  "status": "completed_satellite_product_reconstruction_not_ground_validated",
+  "run_utc": "2026-10-23T22:42:24.554695+00:00",
+  "source_file": "data\\processed\\07_smap_ml_table.csv",
+  "source_sha256": "d97e6e3a8b794a7155182df2541d7cc84a5c905b4b8aa45cd1e70ba8a85fe0d6",
+  "partition_bounds": {
+    "train": [
+      "2019-01-01",
+      "2021-01-01"
+    ],
+    "validation": [
+      "2021-01-01",
+      "2022-01-01"
+    ],
+    "test": [
+      "2022-01-01",
+      "2023-01-01"
+    ]
+  },
+  "selection": {
+    "model": "XGBoost",
+    "features": "plus_radar_and_vegetation",
+    "basis": "validation date-weighted RMSE"
+  },
+  "xgboost_available": true,
+  "python_sklearn": "1.9.1",
+  "xgboost_version": "3.4.1",
+  "seed": 2026,
+  "date_balance": "each calendar date total weight equal",
+  "test_rmse_date_bootstrap_95_interval": [
+    0.05152441636112553,
+    0.05919186335882497
+  ],
+  "validation_abs_residual_90th_percentile": 0.10067360401153565,
+  "test_band_date_weighted_coverage": 0.9404048153905166,
+  "spatial_status": "completed_heldout_grids_and_future_dates",
+  "disclaimers": [
+    "No field validation",
+    "SMAP posting is not independent footprint",
+    "QA-selected sites/dates only",
+    "No test-set early stopping"
+  ]
+}

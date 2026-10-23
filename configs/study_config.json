@@ -1,0 +1,14 @@
+{
+  "research_area": "Chittagong Hill Tracts: Bandarban, Khagrachhari, Rangamati",
+  "gee_project_id": "axial-paratext-491911-b6",
+  "boundary_relative_path": "data/boundaries/CHT_3_districts.shp",
+  "district_name_field": "adm2_name",
+  "expected_districts": ["Bandarban", "Khagrachhari", "Rangamati"],
+  "study_start": "2017-01-01",
+  "study_end_exclusive": "2023-01-01",
+  "smap_collection_for_period": "NASA/SMAP/SPL3SMP_E/005",
+  "smap_reference_band": "soil_moisture_am",
+  "research_status": "completed_satellite_product_reconstruction_not_ground_validated",
+  "research_focus": "SMAP gap reconstruction with quality-aware forest ecohydrology context",
+  "notes": "Notebook 08 completed time-blocked SMAP-product reconstruction and spatial checks. This is not independent soil-moisture field validation. Preserve product versions and QA definitions; 9-km grid posting is not an independent footprint."
+}

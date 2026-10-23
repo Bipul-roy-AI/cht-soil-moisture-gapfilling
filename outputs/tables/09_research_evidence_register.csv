@@ -1,0 +1,8 @@
+topic,evidence_status,ground_validated,interpretable_as
+2017–2022 rainfall,descriptive_remote_sensing,False,Gridded annual and monsoon precipitation patterns
+Forest EVI,QA_screened_satellite_observation,False,Optical greenness where strict-QA pixels remain
+Forest modeled ET,modeled_product_support_checked,False,MOD16A2GF model-product values and main-algorithm support
+SMAP QA & product gap pattern,satellite_qa_feasibility,False,Supported retrieval occurrence on sampled grid postings
+SMAP reconstruction ML,heldout_smap_product_test,False,Held-out accepted SMAP product accuracy
+Original GitHub 2021 model,historical_unverified_not_comparable,False,"Historical proof of concept; target, AOI and test procedures require correction"
+"True forest soil moisture, ET or ecosystem mechanisms",requires_field_validation_and_process_data,False,No field inference available
