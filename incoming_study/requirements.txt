@@ -1,0 +1,13 @@
+# First-stage local Jupyter, geometry checking, and Earth Engine connection.
+# Freeze tested versions before running publication experiments.
+jupyterlab
+ipykernel
+geopandas
+pyogrio
+matplotlib
+pandas
+numpy
+earthengine-api
+scikit-learn
+xgboost
+pyarrow

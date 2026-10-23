@@ -1,0 +1,94 @@
+{
+  "source_csvs": [
+    {
+      "name": "07_cht_smap_2019_Q1.csv",
+      "sha256": "3fc16ff81046d19f0f400a8ab0b8ea3a7b7911970358ff7054019105e7f0d251"
+    },
+    {
+      "name": "07_cht_smap_2019_Q2.csv",
+      "sha256": "426efcfc160fdbb05ae9a3a0a2e62b9ad2545578aec1c61aaaf996e7a779728c"
+    },
+    {
+      "name": "07_cht_smap_2019_Q3.csv",
+      "sha256": "5cf433ae32ebe2a3120ae16453b91992120d4de30da3ef17197ea4098c241420"
+    },
+    {
+      "name": "07_cht_smap_2019_Q4.csv",
+      "sha256": "a7b0e5b7ca5fda9803c9766b3e1cbfe56889e8e0e81a8c51d08bfc2c1e1e6c22"
+    },
+    {
+      "name": "07_cht_smap_2020_Q1.csv",
+      "sha256": "e21ce0f2bb9c2fb15776ad378d140099a9055838ce9a2e84de7171778f13c259"
+    },
+    {
+      "name": "07_cht_smap_2020_Q2.csv",
+      "sha256": "d905f3e80bec47e2de9ae71699275f0dda6c5fbc975023993a9ad3a0f0a562dc"
+    },
+    {
+      "name": "07_cht_smap_2020_Q3.csv",
+      "sha256": "099f3a329c1962292707816c6d9d9ccfab1e753fabd1c59e5ffa6e7d20ff2c2b"
+    },
+    {
+      "name": "07_cht_smap_2020_Q4.csv",
+      "sha256": "819905cd65b3edbad5f3267d476d362664b522cfa4bc75db6e65b5e0520d9dcf"
+    },
+    {
+      "name": "07_cht_smap_2021_Q1_pilot.csv",
+      "sha256": "26a4c638f4091ddf1950905c14c0842577600d138bdf96d247f2f5db9988d81a"
+    },
+    {
+      "name": "07_cht_smap_2021_Q2.csv",
+      "sha256": "72f98bd02bb5b604330c6865fd56a5afd262887ad0fd861a37a0bc06d75666c0"
+    },
+    {
+      "name": "07_cht_smap_2021_Q3.csv",
+      "sha256": "a0dac99ced0cccf93e9720eb9359c139cd8519dfbca9dad9df90c5a3392b54a0"
+    },
+    {
+      "name": "07_cht_smap_2021_Q4.csv",
+      "sha256": "1fe1d70cd265c10db001461a0132e67b4fa0159a357192d2d9d3a0c94c3ed6fa"
+    },
+    {
+      "name": "07_cht_smap_2022_Q1.csv",
+      "sha256": "296cf15b14c43f2c65f13cde318fce9da9fec13e84721aea4a2a965c7d065dc5"
+    },
+    {
+      "name": "07_cht_smap_2022_Q2.csv",
+      "sha256": "2321714b57edfa83b7eeecfcd9db95151e665c8e7182169f5183dff179d0dead"
+    },
+    {
+      "name": "07_cht_smap_2022_Q3.csv",
+      "sha256": "ad72ea3442a49fbec8103a8360e0546579376942b7abe5e9627f7c05cb32d90f"
+    },
+    {
+      "name": "07_cht_smap_2022_Q4.csv",
+      "sha256": "a5442c466c1e8d03049e50d158ff4bd62d2bc4b2fab43473ed704943dad4ae3a"
+    }
+  ],
+  "source_quarters": [
+    "2019_Q1",
+    "2019_Q2",
+    "2019_Q3",
+    "2019_Q4",
+    "2020_Q1",
+    "2020_Q2",
+    "2020_Q3",
+    "2020_Q4",
+    "2021_Q1",
+    "2021_Q2",
+    "2021_Q3",
+    "2021_Q4",
+    "2022_Q1",
+    "2022_Q2",
+    "2022_Q3",
+    "2022_Q4"
+  ],
+  "n_source_quarters": 16,
+  "target": "QA accepted enhanced SMAP AM, not in-situ soil moisture",
+  "date_min": "2019-01-01",
+  "date_max": "2022-12-31",
+  "rows": 248400,
+  "accepted_rows": 17653,
+  "accepted_distinct_dates": 663,
+  "accepted_distinct_grids": 39
+}

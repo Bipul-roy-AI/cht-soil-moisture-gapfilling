@@ -1,0 +1,37 @@
+{
+  "stage": "descriptive_not_field_validated",
+  "years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "district_names": [
+    "Bandarban",
+    "Khagrachhari",
+    "Rangamati"
+  ],
+  "analysis_window": "June-September, calendar months 6-9",
+  "evi_minimum_pixel_support": 0.25,
+  "et_minimum_main_algorithm_day_support": 0.5,
+  "forest_mask": "MCD12Q1 2021 LC_Type1 1-5 (fixed historical population)",
+  "rainfall_spatial_population": "CHIRPS v3 whole district",
+  "source_csv_sha256": {
+    "04_available_years_monthly_panel.csv": "e90f327ba5eca34f5e9e76d2dce6a7c97224a9847cda2abc69b1661872023dbe",
+    "04_available_years_source_inventory.csv": "89ea7563ea49cb46399ba347a13620e69a5abf93d7ac6e9b56626ffac0e7342d",
+    "04_available_years_district_annual_review.csv": "92c0482502bc3586955821ec9c70e3c4543cfd2127831b46dd0c4356cfe2f1a5"
+  },
+  "independently_ground_validated": false,
+  "machine_learning_trained": false,
+  "quality_counts": {
+    "june_sept_district_month_rows": 72,
+    "low_evi_records": 41,
+    "limited_et_main_records": 49,
+    "both_supported_records": 15,
+    "all_years_low_evi_records": 63,
+    "all_years_limited_et_main_records": 51,
+    "all_years_both_supported_records": 135
+  }
+}

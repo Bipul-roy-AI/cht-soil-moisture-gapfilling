@@ -1,0 +1,24 @@
+{
+  "cloud_project_id": "axial-paratext-491911-b6",
+  "boundary_file": "data/boundaries/CHT_3_districts.shp",
+  "boundary_sha256": "dfcaa5e33108586624afd9401f71e40a41c32785420796c8a0f8eee8e44f5a87",
+  "research_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "forest_map_year": 2021,
+  "evi_summary_qa_equal": 0,
+  "min_evi_forest_coverage": 0.25,
+  "min_et_pixel_day_coverage": 0.9,
+  "min_et_main_algorithm_day_support": 0.5,
+  "rain_dataset": "UCSB-CHC/CHIRPS/V3/DAILY_RNL",
+  "evi_dataset": "MODIS/061/MOD13Q1",
+  "et_dataset": "MODIS/061/MOD16A2GF",
+  "landcover_dataset": "MODIS/061/MCD12Q1",
+  "evi_month_convention": "16-day composite start date in calendar month",
+  "et_month_convention": "8-day amounts weighted by calendar day overlap"
+}

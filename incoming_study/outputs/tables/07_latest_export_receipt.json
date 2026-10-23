@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-10-23T22:21:29.874029+00:00",
+  "gee_project": "axial-paratext-491911-b6",
+  "product": "NASA/SMAP/SPL3SMP_E/005",
+  "qa_rule": "retrieval_qual_flag_am == 0 AND valid target",
+  "predictor_support": "prior 24-day S1, already-completed 16-day MOD13Q1 EVI, prior-day/7-day CHIRPS; same-day rainfall diagnostic only",
+  "tasks": [
+    {
+      "name": "2020_Q1",
+      "start": "2020-01-01",
+      "end_exclusive": "2020-04-01",
+      "task_id": "KAGBXQ423KA7BCO7OHKCVYT5",
+      "description": "07_cht_smap_2020_Q1"
+    },
+    {
+      "name": "2020_Q2",
+      "start": "2020-04-01",
+      "end_exclusive": "2020-07-01",
+      "task_id": "SCKJKW4ZWS57VLFJP5ZP4RES",
+      "description": "07_cht_smap_2020_Q2"
+    }
+  ]
+}

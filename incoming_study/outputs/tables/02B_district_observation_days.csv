@@ -1,0 +1,4 @@
+adm2_name,sampled_cells,mean_am_valid_days,mean_pm_valid_days,mean_either_valid_days,mean_am_pct_calendar_days,mean_pm_pct_calendar_days,mean_either_pct_calendar_days
+Bandarban,63,105.74603174603175,75.14285714285714,144.0952380952381,4.83,3.43,6.58
+Khagrachhari,39,430.46153846153845,302.5897435897436,573.4358974358975,19.65,13.81,26.17
+Rangamati,77,11.662337662337663,8.779220779220779,15.896103896103897,0.53,0.4,0.73

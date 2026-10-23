@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-10-23T22:31:38.432720+00:00",
+  "gee_project": "axial-paratext-491911-b6",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "product": "NASA/SMAP/SPL3SMP_E/005",
+  "target": "QA accepted enhanced SMAP AM; not in-situ ground observations",
+  "already_downloaded": [
+    "2019_Q1",
+    "2019_Q2",
+    "2020_Q1",
+    "2020_Q2",
+    "2021_Q1",
+    "2021_Q2",
+    "2021_Q3"
+  ],
+  "already_in_earth_engine": [],
+  "submitted_now": [
+    {
+      "quarter": "2019_Q3",
+      "task_id": "WHLOIKY7KXK7K537ZWZ6YSQ4",
+      "SMAP_images": 70
+    },
+    {
+      "quarter": "2019_Q4",
+      "task_id": "DTPQLPLX5MKWHPNET6A5FOQ6",
+      "SMAP_images": 92
+    },
+    {
+      "quarter": "2020_Q3",
+      "task_id": "V5LO334LW4AES3XV6QQSZLBJ",
+      "SMAP_images": 92
+    },
+    {
+      "quarter": "2020_Q4",
+      "task_id": "X7XXMLZYT74OYAHU3PTP4MFM",
+      "SMAP_images": 92
+    },
+    {
+      "quarter": "2021_Q4",
+      "task_id": "UMRLIKFIOE3KI5CCAW2QOLEJ",
+      "SMAP_images": 92
+    },
+    {
+      "quarter": "2022_Q1",
+      "task_id": "TMQ2N42SKLMDHAFJAMOKPZNL",
+      "SMAP_images": 90
+    },
+    {
+      "quarter": "2022_Q2",
+      "task_id": "H2BLKSOHSOFIKX37VEDGGLWN",
+      "SMAP_images": 91
+    },
+    {
+      "quarter": "2022_Q3",
+      "task_id": "HPXPV4XMHYNK2BAIPXUCUC3E",
+      "SMAP_images": 45
+    },
+    {
+      "quarter": "2022_Q4",
+      "task_id": "DTRAXYH24EEGT3PN23Z3QE3W",
+      "SMAP_images": 91
+    }
+  ],
+  "submission_errors": []
+}

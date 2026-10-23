@@ -1,0 +1,2 @@
+experiment,held_grid_ids_count,RMSE,MAE,bias,R2,n_rows,n_dates,n_grids
+XGBoost/plus_radar,8,0.06206668131956294,0.049278701487169285,-0.010654650860711417,0.39189924896510553,903,139,8

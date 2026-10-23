@@ -1,0 +1,3 @@
+month,calendar_days,days_with_image,days_with_any_am_qa,days_with_any_pm_qa,mean_am_raw_pct,mean_am_qa_pct,mean_pm_raw_pct,mean_pm_qa_pct,mean_either_qa_pct
+2020-01,31,31,16,11,49.35,8.45,38.04,5.79,10.72
+2020-07,31,31,15,10,51.0,3.63,38.76,1.3,4.27
