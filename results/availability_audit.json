@@ -1,0 +1,15 @@
+{
+  "source": "smap_daily_means.csv",
+  "start": "2021-03-06",
+  "end": "2021-12-30",
+  "total_days": 300,
+  "valid_days": 148,
+  "missing_days": 152,
+  "missing_fraction": 0.506667,
+  "longest_missing_run_days": 4,
+  "transitions": {
+    "valid_to_missing": 74,
+    "missing_to_valid": 75
+  },
+  "interpretation": "Availability of recorded regional daily means only; cause and pixelwise coverage not determined."
+}
